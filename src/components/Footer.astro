@@ -23,7 +23,7 @@ const villesIntervention = [
 
 <footer class="bg-foret text-sable py-14 border-t border-safran/30">
     <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
     >
         <!-- Col 1 : Identité & GEO Local -->
         <div class="space-y-4">
@@ -38,7 +38,6 @@ const villesIntervention = [
                         class="block font-serif font-bold text-lg text-safran leading-tight"
                         >La Cuisine du Mafatais</span
                     >
-                    <!-- Contraste renforcé : text-sable/90 au lieu de text-sable/70 -->
                     <span
                         class="block text-[11px] uppercase tracking-wider text-sable/90"
                         >Traiteur Réunionnais</span
@@ -46,7 +45,6 @@ const villesIntervention = [
                 </div>
             </div>
 
-            <!-- Contraste renforcé : text-sable pure au lieu de text-sable/80 -->
             <p class="text-xs text-sable leading-relaxed">
                 Spécialités créoles authentiques & faits-maison. Présent sur les
                 marchés de Toulouse et disponible pour tous vos événements
@@ -92,7 +90,6 @@ const villesIntervention = [
                     ))
                 }
                 <li class="pt-2">
-                    <!-- CTA avec contraste élevé : Fond safran, texte vert forêt sombre -->
                     <a
                         href="/devis-traiteur"
                         class="inline-block bg-safran text-foret font-bold px-3.5 py-2 rounded-lg hover:bg-sable hover:text-foret transition-all text-xs"
@@ -159,7 +156,7 @@ const villesIntervention = [
             >
                 Informations
             </h2>
-            <ul class="space-y-2.5 text-xs text-sable mb-6">
+            <ul class="space-y-2.5 text-xs text-sable">
                 <li>
                     <a
                         href="/"
@@ -182,12 +179,25 @@ const villesIntervention = [
                     >
                 </li>
             </ul>
-
-            <!-- Contraste renforcé : text-sable/80 au lieu de text-sable/50 -->
-            <p class="text-[11px] text-sable/80">
-                © {currentYear} La Cuisine du Mafatais. Tous droits réservés.
-            </p>
         </div>
+    </div>
+
+    <!-- Barre de copyright et signature -->
+    <div
+        class="max-w-7xl mx-auto px-6 pt-8 border-t border-safran/25 flex flex-col sm:flex-row justify-between items-center text-xs text-sable/80 gap-4 text-center sm:text-left"
+    >
+        <p>© {currentYear} La Cuisine du Mafatais. Tous droits réservés.</p>
+        <p>
+            Site créé avec <span class="text-terracotta">❤️</span> par
+            <a
+                href="https://www.loicpoosing.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-sable hover:text-safran transition-colors underline underline-offset-4 ml-1"
+            >
+                Loïc Poo-Sing
+            </a>
+        </p>
     </div>
 </footer>
 
