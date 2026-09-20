@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import DevisForm from "../components/DevisForm.astro";
+---
+
+<Layout
+    title="Traiteur Réunionnais & Buffet Créole à Toulouse | Devis Gratuit | La Cuisine du Mafatais"
+    description="Service traiteur réunionnais sur-mesure à Toulouse et en Haute-Garonne. Repas de groupe, mariages, anniversaires et événements d'entreprise. Devis gratuit."
+>
+    <Navbar />
+
+    <main class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Fil d'Ariane -->
+            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+                <a href="/" class="hover:text-safran transition-colors"
+                    >Accueil</a
+                >
+                <span>/</span>
+                <span class="text-foret font-semibold">Prestation Traiteur</span
+                >
+            </nav>
+
+            <!-- Hero Traiteur -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <span
+                        class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
+                        >Événements & Réceptions</span
+                    >
+                    <h1
+                        class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
+                    >
+                        Traiteur Créole pour Vos Événements à Toulouse
+                    </h1>
+                    <p
+                        class="text-base md:text-lg text-foret/80 font-light leading-relaxed mb-6"
+                    >
+                        Vous organisez un mariage, un anniversaire, une
+                        cousinade ou un repas d'entreprise ? Apportez la chaleur
+                        et la convivialité des grands repas de famille
+                        réunionnais à vos invités.
+                    </p>
+
+                    <div class="space-y-3 text-sm text-foret/80">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
+                                >✓</span
+                            >
+                            <span
+                                ><strong
+                                    >Marmites géantes traditionnelles</strong
+                                > servies chaudes sur place</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
+                                >✓</span
+                            >
+                            <span
+                                ><strong>Formules sur-mesure :</strong> Cocktail apéritif,
+                                plat chaud en marmite & desserts</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
+                                >✓</span
+                            >
+                            <span
+                                >De <strong>15 à plus de 150 personnes</strong> à
+                                Toulouse et en Haute-Garonne</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-2xl border border-foret/10 h-[380px] md:h-[450px]"
+                >
+                    <img
+                        src="/images/stand-marche.jpg"
+                        alt="Service traiteur La Cuisine du Mafatais"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+
+            <!-- Inclusion du composant Formulaire -->
+            <DevisForm />
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

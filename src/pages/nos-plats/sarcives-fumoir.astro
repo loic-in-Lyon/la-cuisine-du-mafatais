@@ -1,0 +1,158 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+    title="Sarcives Réunionnaises & Grillades au Fumoir à Toulouse | La Cuisine du Mafatais"
+    description="Découvrez nos sarcives traditionnelles (ribs, filet mignon) et notre poulet fermier cuit au fumoir. Spécialités réunionnaises rôties et marinées à Toulouse."
+>
+    <Navbar />
+
+    <main class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Fil d'Ariane -->
+            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+                <a href="/" class="hover:text-safran transition-colors"
+                    >Accueil</a
+                >
+                <span>/</span>
+                <a href="/#carte" class="hover:text-safran transition-colors"
+                    >Nos Plats</a
+                >
+                <span>/</span>
+                <span class="text-foret font-semibold">Sarcives & Fumoir</span>
+            </nav>
+
+            <!-- En-tête / Hero Produit -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <!-- Photo de la sarcive -->
+                <div
+                    class="relative rounded-3xl overflow-hidden shadow-2xl border border-foret/10"
+                >
+                    <img
+                        src="/images/sarcive.jpg"
+                        alt="Sarcives réunionnaises rôties et dorées"
+                        class="w-full h-[450px] md:h-[550px] object-cover"
+                    />
+                    <span
+                        class="absolute top-6 left-6 px-4 py-1.5 bg-terracotta text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-md"
+                    >
+                        Spécialité Rôtisserie
+                    </span>
+                </div>
+
+                <!-- Détails & Présentation -->
+                <div class="space-y-6">
+                    <span
+                        class="text-xs font-bold text-safran uppercase tracking-widest block"
+                        >Marinade & Cuisson Lente</span
+                    >
+                    <h1
+                        class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight"
+                    >
+                        Sarcives & Grillades au Fumoir
+                    </h1>
+                    <p class="text-lg text-foret/80 leading-relaxed font-light">
+                        Une fusion unique d'influences sino-créoles. Nos pièces
+                        de viande sont marinées pendant 24h dans un mélange de
+                        miel, sirop de canne, anis étoilé et 5 épices, puis
+                        lentement rôties ou fumées sur place.
+                    </p>
+
+                    <div
+                        class="p-6 rounded-2xl bg-sable-dark/50 border border-foret/10 space-y-3"
+                    >
+                        <h3 class="font-serif font-bold text-foret text-base">
+                            Nos découpes & viandes au choix :
+                        </h3>
+                        <ul
+                            class="text-sm text-foret/70 space-y-2 list-disc list-inside"
+                        >
+                            <li>
+                                <strong class="text-foret"
+                                    >Sarcive Ribs :</strong
+                                > Travers de porc caramélisés et fondants
+                            </li>
+                            <li>
+                                <strong class="text-foret"
+                                    >Sarcive Filet Mignon :</strong
+                                > Pièce noble, tendre et légèrement laquée
+                            </li>
+                            <li>
+                                <strong class="text-foret"
+                                    >Poulet Fermier au Fumoir :</strong
+                                > Poulet Label Rouge fumé au bois, peau croustillante
+                            </li>
+                            <li>
+                                <strong class="text-foret"
+                                    >Volailles péi :</strong
+                                > Cuisses de pintade et de dinde rôties aux épices
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a
+                            href="/#marches"
+                            class="px-8 py-4 bg-safran text-foret font-bold rounded-full hover:bg-safran-hover transition-all text-center shadow-md"
+                        >
+                            Commander sur le marché
+                        </a>
+                        <a
+                            href="/devis-traiteur"
+                            class="px-8 py-4 bg-foret text-sable font-semibold rounded-full hover:bg-foret-light transition-all text-center shadow-md"
+                        >
+                            Ajouter à votre buffet traiteur
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arguments / Savoir-faire -->
+            <div
+                class="bg-sable-dark/30 rounded-3xl p-8 md:p-12 border border-foret/5 grid md:grid-cols-3 gap-8 text-center md:text-left mb-16"
+            >
+                <div class="space-y-2">
+                    <span class="text-2xl font-serif text-terracotta font-bold"
+                        >01.</span
+                    >
+                    <h4 class="font-serif font-bold text-foret text-lg">
+                        24h de Marinade
+                    </h4>
+                    <p class="text-xs text-foret/70 leading-relaxed">
+                        Miel péi, sauce soja, anis étoilé et liqueur locale pour
+                        imprégner la viande jusqu'à l'os.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <span class="text-2xl font-serif text-safran font-bold"
+                        >02.</span
+                    >
+                    <h4 class="font-serif font-bold text-foret text-lg">
+                        Fumage Traditionnel
+                    </h4>
+                    <p class="text-xs text-foret/70 leading-relaxed">
+                        Une cuisson maîtrisée au fumoir pour apporter cette note
+                        boisée incomparable et conserver toute la tendreté.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <span class="text-2xl font-serif text-foret font-bold"
+                        >03.</span
+                    >
+                    <h4 class="font-serif font-bold text-foret text-lg">
+                        Achat à la Pièce ou au Poids
+                    </h4>
+                    <p class="text-xs text-foret/70 leading-relaxed">
+                        À déguster chaud sur le marché ou à emporter chez vous
+                        pour vos apéritifs et repas de famille.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

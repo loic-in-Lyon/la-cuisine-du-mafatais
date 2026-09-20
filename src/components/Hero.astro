@@ -1,0 +1,87 @@
+---
+
+---
+
+<section
+    class="relative min-h-[88vh] flex items-center justify-center text-sable overflow-hidden bg-black"
+>
+    <!-- Image de fond -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src="/images/carry-poulet-gilles.png"
+            alt="Cuisine traditionnelle réunionnaise"
+            class="w-full h-full object-cover object-center transform scale-105"
+        />
+        <!-- Voile d'ombrage progressif léger pour l'ensemble et plus marqué en bas -->
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20"
+        >
+        </div>
+
+        <!-- Halo sombre radial juste sous le texte pour faire ressortir le riz blanc sans gâcher la photo -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/60 via-transparent to-transparent pointer-events-none"
+        >
+        </div>
+    </div>
+
+    <!-- Vignette/Macaron Drapeau Île agrandi -->
+    <div
+        class="absolute top-8 right-8 md:top-12 md:right-12 z-20 hidden sm:flex items-center gap-3.5 bg-sable/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-2xl border border-white/50 transform rotate-6 hover:rotate-0 transition-all duration-300"
+    >
+        <img
+            src="/images/drapeau.png"
+            alt="Île de La Réunion"
+            class="h-11 w-auto object-contain drop-shadow-sm"
+        />
+        <div class="text-left leading-tight">
+            <span
+                class="block text-[10px] uppercase font-bold tracking-widest text-foret/70"
+                >Recettes Péi</span
+            >
+            <span class="text-sm font-serif font-bold text-foret"
+                >100% Authentique</span
+            >
+        </div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center px-6 py-20">
+        <!-- Badge minimaliste avec fond plus contrasté -->
+        <span
+            class="inline-block px-5 py-2 rounded-full bg-black/40 backdrop-blur-md text-safran text-xs font-bold uppercase tracking-widest mb-6 border border-safran/50 shadow-md"
+        >
+            Cuisine Créole Traditionnelle
+        </span>
+
+        <!-- Titre avec ombre portée lourde pour découper parfaitement le riz blanc -->
+        <h1
+            class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+        >
+            L'esprit du Péi, <br />le goût du vrai Carry.
+        </h1>
+
+        <p
+            class="text-lg md:text-xl text-sable/95 max-w-2xl mx-auto mb-10 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+        >
+            Toute l'authenticité de l'Île de La Réunion à Toulouse. Des recettes
+            ancestrales, mijotées selon la pure tradition réunionnaise.
+        </p>
+
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+            <a
+                href="#carte"
+                class="w-full sm:w-auto px-8 py-4 bg-safran text-foret font-bold rounded-full hover:bg-safran-hover transition-all shadow-xl hover:scale-105 text-center"
+            >
+                Découvrir la Carte
+            </a>
+            <a
+                href="#marches"
+                class="w-full sm:w-auto px-8 py-4 bg-black/40 backdrop-blur-md border border-sable/40 text-sable hover:bg-black/60 rounded-full transition-all text-center font-semibold shadow-md"
+            >
+                Où nous trouver ?
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,193 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+    title="Marmites Créoles : Carry Poulet, Rougail Saucisse & Carry Morue à Toulouse | La Cuisine du Mafatais"
+    description="Dégustez nos grands classiques réunionnais à Toulouse : Carry Poulet, Rougail Saucisse fumé, Carry Morue et Sautés traditionnels. Servis avec riz, grains et rougail."
+>
+    <Navbar />
+
+    <main class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Fil d'Ariane -->
+            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+                <a href="/" class="hover:text-safran transition-colors"
+                    >Accueil</a
+                >
+                <span>/</span>
+                <a href="/#carte" class="hover:text-safran transition-colors"
+                    >Nos Plats</a
+                >
+                <span>/</span>
+                <span class="text-foret font-semibold"
+                    >Marmites & Plats Traditionnels</span
+                >
+            </nav>
+
+            <!-- En-tête -->
+            <div class="max-w-3xl mb-16">
+                <span
+                    class="text-xs font-bold text-terracotta uppercase tracking-widest block mb-2"
+                    >Cuisson en Marmite</span
+                >
+                <h1
+                    class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
+                >
+                    Nos Carrys & Plats Traditionnels
+                </h1>
+                <p class="text-lg text-foret/80 font-light leading-relaxed">
+                    Mijotés selon les recettes ancestrales des Hauts de La
+                    Réunion, nos plats sont accompagnés de riz basmati, de
+                    grains du jour (lentilles de Cilaos ou haricots rouges) et
+                    d'un rougail piment préparé à la main.
+                </p>
+            </div>
+
+            <!-- Grille des Recettes Phares -->
+            <div class="space-y-16 mb-20">
+                <!-- Recette 1 : Carry Poulet -->
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center bg-sable-dark/30 rounded-3xl p-6 md:p-10 border border-foret/5"
+                >
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-lg h-[320px] md:h-[400px]"
+                    >
+                        <img
+                            src="/images/carry-poulet-jardin.jpeg"
+                            alt="Carry Poulet Traditionnel Réunionnais"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="space-y-4">
+                        <span
+                            class="px-3 py-1 bg-safran text-foret text-[10px] font-bold uppercase tracking-widest rounded-full inline-block"
+                        >
+                            Incontournable Péi
+                        </span>
+                        <h2
+                            class="text-2xl md:text-3xl font-serif font-bold text-foret"
+                        >
+                            Carry Poulet Traditionnel
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed">
+                            Poulet fermier découpé et mijoté avec roussissure
+                            d'oignons, d'ail, de gingembre frais écrasé au
+                            pilon, de curcuma pays et de tomates fraîches. Sans
+                            crème ni lait de coco.
+                        </p>
+                        <div class="text-xs text-foret/70 font-semibold pt-2">
+                            ✓ Inclus : Riz basmati, grains et rougail piment
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recette 2 : Rougail Saucisse -->
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center bg-sable-dark/30 rounded-3xl p-6 md:p-10 border border-foret/5"
+                >
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-lg h-[320px] md:h-[400px] lg:order-2"
+                    >
+                        <img
+                            src="/images/rougail-saucisse.jpeg"
+                            alt="Rougail Saucisse Fumé"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="space-y-4 lg:order-1">
+                        <span
+                            class="px-3 py-1 bg-terracotta text-white text-[10px] font-bold uppercase tracking-widest rounded-full inline-block"
+                        >
+                            Spécialité Fumée
+                        </span>
+                        <h2
+                            class="text-2xl md:text-3xl font-serif font-bold text-foret"
+                        >
+                            Rougail Saucisse Fumé
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed">
+                            Saucisses artisanales d'exception, blanchies puis
+                            réduites à feu doux dans une compotée de tomates,
+                            oignons, gingembre et une pointe de zeste de
+                            combava.
+                        </p>
+                        <div class="text-xs text-foret/70 font-semibold pt-2">
+                            ✓ Inclus : Riz basmati, grains et rougail piment
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recette 3 : Carry Morue -->
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center bg-sable-dark/30 rounded-3xl p-6 md:p-10 border border-foret/5"
+                >
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-lg h-[320px] md:h-[400px]"
+                    >
+                        <img
+                            src="/images/carry-morue.jpg"
+                            alt="Carry Morue Réunionnais"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="space-y-4">
+                        <span
+                            class="px-3 py-1 bg-foret text-sable text-[10px] font-bold uppercase tracking-widest rounded-full inline-block"
+                        >
+                            Saveur de la Mer
+                        </span>
+                        <h2
+                            class="text-2xl md:text-3xl font-serif font-bold text-foret"
+                        >
+                            Carry Morue
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed">
+                            Morue rigoureusement dessalée, effilochée puis
+                            rissolée aux aromates et au curcuma. Une recette
+                            très parfumée et emblématique des repas de famille
+                            réunionnais.
+                        </p>
+                        <div class="text-xs text-foret/70 font-semibold pt-2">
+                            ✓ Inclus : Riz basmati, grains et rougail piment
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Traiteur & Marché -->
+            <div
+                class="p-8 md:p-12 rounded-3xl bg-foret text-sable text-center max-w-4xl mx-auto shadow-2xl"
+            >
+                <h3 class="text-2xl md:text-3xl font-serif font-bold mb-4">
+                    Envie de déguster nos marmites ?
+                </h3>
+                <p
+                    class="text-sable/80 text-sm md:text-base max-w-xl mx-auto mb-8 font-light"
+                >
+                    Retrouvez nos plats chauds chaque semaine sur les marchés
+                    toulousains ou commandez un buffet en marmites géantes pour
+                    vos événements.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                        href="/#marches"
+                        class="px-8 py-4 bg-safran text-foret font-bold rounded-full hover:bg-safran-hover transition-all text-sm"
+                    >
+                        Horaires des Marchés
+                    </a>
+                    <a
+                        href="/devis-traiteur"
+                        class="px-8 py-4 bg-sable text-foret font-semibold rounded-full hover:bg-white transition-all text-sm"
+                    >
+                        Demander un Devis Traiteur
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

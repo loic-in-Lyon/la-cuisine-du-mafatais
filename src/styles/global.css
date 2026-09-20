@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sable: #F9F6F0;
+  --color-sable-dark: #EFECE6;
+  
+  --color-foret: #1B3B2B;
+  --color-foret-light: #2C5E43;
+  
+  --color-safran: #E5A93B;
+  --color-safran-hover: #D4962A;
+  
+  --color-terracotta: #C85A32;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Application globale des polices et du fond */
+body {
+  background-color: var(--color-sable);
+  color: var(--color-foret);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}

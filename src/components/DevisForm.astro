@@ -1,0 +1,262 @@
+---
+
+---
+
+<div
+    class="bg-sable-dark/40 rounded-3xl p-8 md:p-12 border border-foret/10 max-w-4xl mx-auto shadow-xl"
+>
+    <div class="text-center mb-10">
+        <span
+            class="text-xs font-bold text-terracotta uppercase tracking-widest block mb-1"
+            >Sans engagement</span
+        >
+        <h2 class="text-2xl md:text-3xl font-serif font-bold text-foret mb-2">
+            Demander un Devis Gratuit
+        </h2>
+        <p class="text-xs md:text-sm text-foret/70">
+            Remplissez le formulaire ci-dessous. Nous vous répondons sous 24h à
+            48h.
+        </p>
+    </div>
+
+    <!-- Message de retour (caché par défaut) -->
+    <div id="feedback-message" class="hidden mb-8 p-6 rounded-2xl text-center">
+    </div>
+
+    <form id="devis-form" class="space-y-6">
+        <!-- Clé d'accès Web3Forms -->
+        <input
+            type="hidden"
+            name="access_key"
+            value="f44199e5-2344-48ef-8a10-0901e5962bfa"
+        />
+        <input
+            type="hidden"
+            name="subject"
+            value="Nouvelle demande de devis traiteur - La Cuisine du Mafatais"
+        />
+        <input
+            type="hidden"
+            name="from_name"
+            value="La Cuisine du Mafatais Website"
+        />
+
+        <!-- Nom & Email -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Nom & Prénom *</label
+                >
+                <input
+                    type="text"
+                    name="nom"
+                    required
+                    placeholder="Ex: Jean Dupont"
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Email *</label
+                >
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Ex: jean.dupont@exemple.fr"
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+        </div>
+
+        <!-- Téléphone & Type d'événement -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Téléphone *</label
+                >
+                <input
+                    type="tel"
+                    name="telephone"
+                    required
+                    placeholder="Ex: 06 35 30 46 59"
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Type d'événement *</label
+                >
+                <select
+                    name="type_evenement"
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                >
+                    <option>Anniversaire / Fête de famille</option>
+                    <option>Mariage / Retour de mariage</option>
+                    <option>Repas d'entreprise / Séminaire</option>
+                    <option>Autre événement privé / Associatif</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Date, Nombre de personnes & Lieu -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Date prévue *</label
+                >
+                <input
+                    type="date"
+                    name="date_evenement"
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Nombre d'invités *</label
+                >
+                <input
+                    type="number"
+                    name="nombre_invites"
+                    min="10"
+                    placeholder="Ex: 40"
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+            <div>
+                <label
+                    class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                    >Lieu / Ville *</label
+                >
+                <input
+                    type="text"
+                    name="lieu"
+                    placeholder="Ex: Toulouse, Blagnac..."
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+                />
+            </div>
+        </div>
+
+        <!-- Message -->
+        <div>
+            <label
+                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
+                >Plats souhaités & Précisions</label
+            >
+            <textarea
+                name="message"
+                rows="4"
+                placeholder="Précisez votre besoin (ex: Cocktail apéritif samoussas/bouchons + Carry Poulet et Rougail Saucisse en plat chaud...)"
+                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
+            ></textarea>
+        </div>
+
+        <button
+            type="submit"
+            id="submit-btn"
+            class="w-full py-4 bg-safran text-foret font-bold rounded-xl hover:bg-safran-hover transition-all text-center shadow-lg uppercase tracking-wider text-sm cursor-pointer flex justify-center items-center gap-2"
+        >
+            <span>Envoyer ma demande de devis</span>
+        </button>
+    </form>
+
+    <!-- Contact Direct Rapide -->
+    <div class="mt-12 text-center border-t border-foret/10 pt-8">
+        <p class="text-xs md:text-sm text-foret/70 mb-3">
+            Une question sur les marchés, une réservation de portion ou un
+            renseignement rapide ?
+        </p>
+        <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs md:text-sm font-bold text-foret"
+        >
+            <a
+                href="tel:0635304659"
+                class="flex items-center gap-2 hover:text-safran transition-colors"
+            >
+                <span>📞</span> 06 35 30 46 59
+            </a>
+            <span class="hidden sm:inline text-foret/30">•</span>
+            <a
+                href="mailto:mafatais97490@gmail.com"
+                class="flex items-center gap-2 hover:text-safran transition-colors"
+            >
+                <span>✉️</span> mafatais97490@gmail.com
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("devis-form") as HTMLFormElement;
+    const feedback = document.getElementById("feedback-message");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (form && feedback && submitBtn) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // État de chargement du bouton
+            submitBtn.setAttribute("disabled", "true");
+            submitBtn.classList.add("opacity-75", "cursor-not-allowed");
+            submitBtn.innerHTML = `
+          <svg class="animate-spin h-5 w-5 text-foret" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>Envoi en cours...</span>
+        `;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(
+                    "https://api.web3forms.com/submit",
+                    {
+                        method: "POST",
+                        body: formData,
+                    },
+                );
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Affichage du message de succès
+                    feedback.className =
+                        "mb-8 p-6 rounded-2xl text-center bg-foret text-sable border border-safran/30 shadow-lg";
+                    feedback.innerHTML = `
+              <div class="text-3xl mb-2">🎉</div>
+              <h3 class="font-serif font-bold text-xl text-safran mb-1">Demande envoyée avec succès !</h3>
+              <p class="text-xs md:text-sm text-sable/90">Merci ! Nous avons bien reçu votre demande de devis. Nous vous recontacterons sous 24h à 48h.</p>
+            `;
+                    form.reset();
+                    form.style.display = "none"; // Masque le formulaire après envoi
+                } else {
+                    throw new Error("Erreur réseau");
+                }
+            } catch (error) {
+                // En cas d'erreur
+                feedback.className =
+                    "mb-8 p-6 rounded-2xl text-center bg-terracotta/20 text-terracotta border border-terracotta/30";
+                feedback.innerHTML = `
+            <h3 class="font-bold text-sm mb-1">Oups ! Une erreur est survenue.</h3>
+            <p class="text-xs">Veuillez réessayer ou nous contacter directement par téléphone au <strong>06 35 30 46 59</strong>.</p>
+          `;
+                feedback.classList.remove("hidden");
+
+                // Réinitialisation du bouton
+                submitBtn.removeAttribute("disabled");
+                submitBtn.classList.remove("opacity-75", "cursor-not-allowed");
+                submitBtn.innerHTML = `<span>Envoyer ma demande de devis</span>`;
+            }
+        });
+    }
+</script>

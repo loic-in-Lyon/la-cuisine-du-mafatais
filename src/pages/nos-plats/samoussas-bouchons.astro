@@ -1,0 +1,238 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+    title="Bouchons Maison, Samoussas & Snacks Créoles à Toulouse | La Cuisine du Mafatais"
+    description="Bouchons artisanaux (porc/combava, poulet), samoussas croustillants, accras de morue et bonbons piment faits maison à Toulouse. Vente sur le marché et traiteur."
+>
+    <Navbar />
+
+    <main class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Fil d'Ariane -->
+            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+                <a href="/" class="hover:text-safran transition-colors"
+                    >Accueil</a
+                >
+                <span>/</span>
+                <a href="/#carte" class="hover:text-safran transition-colors"
+                    >Nos Plats</a
+                >
+                <span>/</span>
+                <span class="text-foret font-semibold"
+                    >Snacks & Street-Food Créole</span
+                >
+            </nav>
+
+            <!-- En-tête -->
+            <div class="max-w-3xl mb-16">
+                <span
+                    class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
+                    >100% Fait Maison</span
+                >
+                <h1
+                    class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
+                >
+                    Bouchons, Samoussas & Snacks Péi
+                </h1>
+                <p class="text-lg text-foret/80 font-light leading-relaxed">
+                    Incontournables de l'apéro et de la street-food
+                    réunionnaise, tous nos snacks sont façonnés à la main. À
+                    déguster chauds sur le pouce au marché ou en pièces
+                    apéritives pour vos événements.
+                </p>
+            </div>
+
+            <!-- Grille des Snacks -->
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <!-- Snack 1 : Bouchons Fait Maison -->
+                <div
+                    class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
+                        >
+                            <img
+                                src="/images/bouchons.jpg"
+                                alt="Bouchons réunionnais faits maison"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-safran text-foret text-[10px] font-bold uppercase tracking-widest rounded-full inline-block mb-3"
+                        >
+                            Spécialité Phare
+                        </span>
+                        <h2
+                            class="text-2xl font-serif font-bold text-foret mb-2"
+                        >
+                            Bouchons Artisanaux (Fait Maison)
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed mb-4">
+                            Bouchées à la vapeur enveloppées dans une pâte fine
+                            et farcies de viande assaisonnée au combava frais ou
+                            au poulet. Servis avec sauce soja et piment chinois.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-foret/10 flex justify-between items-center text-xs font-bold text-foret"
+                    >
+                        <span>Variétés : Porc / Combava ou Poulet</span>
+                        <span class="text-terracotta">1 € / pièce</span>
+                    </div>
+                </div>
+
+                <!-- Snack 2 : Samoussas -->
+                <div
+                    class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
+                        >
+                            <img
+                                src="/images/samoussas.jpeg"
+                                alt="Samoussas réunionnais croustillants"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-terracotta text-white text-[10px] font-bold uppercase tracking-widest rounded-full inline-block mb-3"
+                        >
+                            Croustillant & Parfumé
+                        </span>
+                        <h2
+                            class="text-2xl font-serif font-bold text-foret mb-2"
+                        >
+                            Samoussas Créoles
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed mb-4">
+                            Triangles croustillants généreusement garnis de
+                            farce épicée. Recette traditionnelle pliée à la main
+                            pour une texture parfaite après cuisson.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-foret/10 flex justify-between items-center text-xs font-bold text-foret"
+                    >
+                        <span>Bœuf ou Jambon / Gruyère</span>
+                        <span class="text-terracotta"
+                            >5 € les 4 / 10 € les 10</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Snack 3 : Accras de Morue -->
+                <div
+                    class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
+                        >
+                            <img
+                                src="/images/acras.jpg"
+                                alt="Accras de morue dorés"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-foret text-sable text-[10px] font-bold uppercase tracking-widest rounded-full inline-block mb-3"
+                        >
+                            Incontournable Apéro
+                        </span>
+                        <h2
+                            class="text-2xl font-serif font-bold text-foret mb-2"
+                        >
+                            Accras de Morue
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed mb-4">
+                            Beignets dorés et moelleux préparés avec de la morue
+                            effilochée, des herbes fraîches, de l'oignon pays et
+                            une pointe d'épices doux.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-foret/10 flex justify-between items-center text-xs font-bold text-foret"
+                    >
+                        <span>Portion de 8 pièces</span>
+                        <span class="text-terracotta">6 € les 8</span>
+                    </div>
+                </div>
+
+                <!-- Snack 4 : Bonbons Piment -->
+                <div
+                    class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
+                        >
+                            <img
+                                src="/images/bonbon-piment.jpg"
+                                alt="Bonbons piment traditionnels"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-safran text-foret text-[10px] font-bold uppercase tracking-widest rounded-full inline-block mb-3"
+                        >
+                            100% Végétalien
+                        </span>
+                        <h2
+                            class="text-2xl font-serif font-bold text-foret mb-2"
+                        >
+                            Bonbons Piment
+                        </h2>
+                        <p class="text-sm text-foret/80 leading-relaxed mb-4">
+                            Galettes frite à base de pois du Cap concassés,
+                            cumin, curcuma, gingembre, piment vert et
+                            ciboulette. Un classique relevé et croustillant.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-foret/10 flex justify-between items-center text-xs font-bold text-foret"
+                    >
+                        <span>Portion de 8 pièces</span>
+                        <span class="text-terracotta">6 € les 8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action -->
+            <div
+                class="p-8 md:p-12 rounded-3xl bg-foret text-sable text-center max-w-4xl mx-auto shadow-2xl"
+            >
+                <h3 class="text-2xl md:text-3xl font-serif font-bold mb-4">
+                    Un cocktail ou un apéritif en vue ?
+                </h3>
+                <p
+                    class="text-sable/80 text-sm md:text-base max-w-xl mx-auto mb-8 font-light"
+                >
+                    Composez votre plateau apéritif créole sur-mesure pour vos
+                    fêtes, anniversaires ou événements d'entreprise.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                        href="/devis-traiteur"
+                        class="px-8 py-4 bg-safran text-foret font-bold rounded-full hover:bg-safran-hover transition-all text-sm"
+                    >
+                        Demander un devis apéritif / traiteur
+                    </a>
+                    <a
+                        href="/#marches"
+                        class="px-8 py-4 bg-sable text-foret font-semibold rounded-full hover:bg-white transition-all text-sm"
+                    >
+                        Voir nos marchés
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
