@@ -1,47 +1,217 @@
 ---
-/* Code Astro si besoin */
+import { Image } from "astro:assets";
+import imgLogo from "../assets/images/logo.png";
+
+const currentPath = Astro.url.pathname;
+
+const platLinks = [
+    {
+        name: "Carrys & Rougails",
+        path: "/nos-plats/carrys-et-rougails",
+        desc: "Marmites mijotées traditionnelles",
+    },
+    {
+        name: "Sarcives & Fumoir",
+        path: "/nos-plats/sarcives-fumoir",
+        desc: "Grillades & viandes fumées maison",
+    },
+    {
+        name: "Samoussas & Bouchons",
+        path: "/nos-plats/samoussas-bouchons",
+        desc: "Entrées, accras & bonbons piment",
+    },
+];
+
+const isPlatsActive = currentPath.startsWith("/nos-plats");
 ---
 
 <header
-    class="sticky top-0 z-50 bg-sable/90 backdrop-blur-md border-b border-foret/10"
+    class="sticky top-0 z-50 bg-sable/95 backdrop-blur-md border-b border-foret/10 transition-all"
 >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-            <img
-                src="/images/logo.png"
-                alt="Logo La Cuisine du Mafatais"
-                class="h-12 w-auto rounded-full shadow-sm"
+        <!-- Logo & Nom -->
+        <a href="/" class="flex items-center gap-3 group">
+            <Image
+                src={imgLogo}
+                alt="La Cuisine du Mafatais - Traiteur Réunionnais Toulouse"
+                class="w-11 h-11 rounded-full border border-safran/60 object-cover shadow-sm group-hover:scale-105 transition-transform"
             />
             <div>
                 <span
-                    class="text-lg font-serif font-bold text-foret tracking-wide block leading-none"
+                    class="block font-serif font-bold text-lg md:text-xl text-foret leading-tight"
+                    >La Cuisine du Mafatais</span
                 >
-                    La Cuisine du Mafatais
-                </span>
                 <span
-                    class="text-safran text-[10px] uppercase tracking-widest font-sans font-semibold"
+                    class="block text-[10px] uppercase tracking-widest text-foret/70 font-sans"
+                    >Traiteur Réunionnais Toulouse</span
                 >
-                    974 • Toulouse
-                </span>
             </div>
         </a>
 
-        <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
-            <a href="#tradition" class="hover:text-safran transition-colors"
-                >La Tradition</a
-            >
-            <a href="#carte" class="hover:text-safran transition-colors"
-                >Nos Plats</a
-            >
-            <a href="#marches" class="hover:text-safran transition-colors"
-                >Nos Marchés</a
-            >
+        <!-- Navigation Desktop -->
+        <nav class="hidden md:flex items-center gap-8">
             <a
-                href="#traiteur"
-                class="px-5 py-2.5 bg-foret text-sable rounded-full hover:bg-foret-light transition-colors shadow-sm"
+                href="/"
+                class={`text-sm font-medium transition-colors hover:text-safran ${
+                    currentPath === "/"
+                        ? "text-safran font-bold underline underline-offset-4 decoration-safran"
+                        : "text-foret"
+                }`}
             >
-                Devis Traiteur
+                Accueil
+            </a>
+
+            <!-- Dropdown Nos Plats -->
+            <div class="relative group py-2">
+                <button
+                    type="button"
+                    class={`flex items-center gap-1.5 text-sm font-medium transition-colors group-hover:text-safran ${
+                        isPlatsActive
+                            ? "text-safran font-bold underline underline-offset-4 decoration-safran"
+                            : "text-foret"
+                    }`}
+                >
+                    <span>Nos Spécialités</span>
+                    <svg
+                        class="w-4 h-4 transition-transform group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+
+                <div
+                    class="absolute left-0 top-full hidden group-hover:block w-64 bg-sable border border-foret/10 rounded-2xl shadow-xl p-3 space-y-1"
+                >
+                    {
+                        platLinks.map((plat) => (
+                            <a
+                                href={plat.path}
+                                class={`block p-2.5 rounded-xl transition-colors hover:bg-sable-dark/50 ${
+                                    currentPath === plat.path
+                                        ? "bg-sable-dark text-safran font-bold"
+                                        : "text-foret"
+                                }`}
+                            >
+                                <div class="text-sm font-semibold">
+                                    {plat.name}
+                                </div>
+                                <div class="text-[11px] text-foret/60">
+                                    {plat.desc}
+                                </div>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- CTA Unique Desktop -->
+            <a
+                href="/devis-traiteur"
+                class="bg-safran text-foret font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md hover:bg-safran-dark hover:scale-105 transition-all"
+            >
+                Demander un devis
             </a>
         </nav>
+
+        <!-- Bouton Burger Mobile Seul (Header épuré sur smartphone) -->
+        <button
+            id="menu-btn"
+            class="md:hidden text-foret p-2 rounded-lg hover:bg-sable-dark/40 focus:outline-none"
+            aria-label="Ouvrir le menu de navigation"
+        >
+            <svg
+                id="menu-icon-open"
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg
+                id="menu-icon-close"
+                class="w-7 h-7 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu Mobile Déroulant -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-sable border-b border-foret/10 px-6 py-6 space-y-4 shadow-2xl"
+    >
+        <a
+            href="/"
+            class={`block text-base font-semibold py-2 border-b border-foret/5 ${
+                currentPath === "/" ? "text-safran font-bold" : "text-foret"
+            }`}
+        >
+            Accueil
+        </a>
+
+        <div class="py-2 border-b border-foret/5">
+            <span
+                class="block text-xs font-bold text-safran uppercase tracking-wider mb-3"
+                >Nos Spécialités</span
+            >
+            <div class="pl-3 space-y-3">
+                {
+                    platLinks.map((plat) => (
+                        <a
+                            href={plat.path}
+                            class={`block text-sm py-1 ${
+                                currentPath === plat.path
+                                    ? "text-safran font-bold"
+                                    : "text-foret/80"
+                            }`}
+                        >
+                            • {plat.name}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+
+        <a
+            href="/devis-traiteur"
+            class="block text-center bg-safran text-foret font-bold uppercase tracking-wider text-xs px-5 py-3.5 rounded-full shadow-lg mt-4"
+        >
+            Demander un devis gratuit
+        </a>
     </div>
 </header>
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("menu-icon-open");
+    const iconClose = document.getElementById("menu-icon-close");
+
+    if (menuBtn && mobileMenu && iconOpen && iconClose) {
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            iconOpen.classList.toggle("hidden");
+            iconClose.classList.toggle("hidden");
+        });
+    }
+</script>

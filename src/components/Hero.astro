@@ -1,87 +1,123 @@
 ---
-
+import { Image } from "astro:assets";
+import heroBg from "../assets/images/hero-original.png";
+import drapeauReunion from "../assets/images/drapeau-reunion.png"; // Ton image PNG sans fond de la Réunion
 ---
 
 <section
-    class="relative min-h-[88vh] flex items-center justify-center text-sable overflow-hidden bg-black"
+    class="relative min-h-[85vh] flex items-center overflow-hidden bg-foret"
 >
-    <!-- Image de fond -->
-    <div class="absolute inset-0 z-0">
-        <img
-            src="/images/carry-poulet-gilles.png"
-            alt="Cuisine traditionnelle réunionnaise"
-            class="w-full h-full object-cover object-center transform scale-105"
-        />
-        <!-- Voile d'ombrage progressif léger pour l'ensemble et plus marqué en bas -->
-        <div
-            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20"
-        >
-        </div>
+    <!-- Image de fond Hero -->
+    <Image
+        src={heroBg}
+        alt="Carry traditionnel réunionnais au coucher de soleil - La Cuisine du Mafatais Toulouse"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+        widths={[640, 1024, 1600, 2000]}
+        sizes="100vw"
+    />
 
-        <!-- Halo sombre radial juste sous le texte pour faire ressortir le riz blanc sans gâcher la photo -->
-        <div
-            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/60 via-transparent to-transparent pointer-events-none"
-        >
-        </div>
-    </div>
-
-    <!-- Vignette/Macaron Drapeau Île agrandi -->
+    <!-- Overlay dégradé gauche -> droite (préserve le centre et le coucher de soleil) -->
     <div
-        class="absolute top-8 right-8 md:top-12 md:right-12 z-20 hidden sm:flex items-center gap-3.5 bg-sable/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-2xl border border-white/50 transform rotate-6 hover:rotate-0 transition-all duration-300"
+        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent"
+        aria-hidden="true"
     >
-        <img
-            src="/images/drapeau.png"
-            alt="Île de La Réunion"
-            class="h-11 w-auto object-contain drop-shadow-sm"
-        />
-        <div class="text-left leading-tight">
-            <span
-                class="block text-[10px] uppercase font-bold tracking-widest text-foret/70"
-                >Recettes Péi</span
-            >
-            <span class="text-sm font-serif font-bold text-foret"
-                >100% Authentique</span
-            >
+    </div>
+
+    <!-- Badge "RECETTES PÉI 100% Authentique" EXACT (Fond crème, arrondi, incliné) -->
+    <div
+        class="absolute top-6 right-6 md:top-10 md:right-12 z-20 transform rotate-[6deg] shadow-2xl transition-transform hover:rotate-0"
+    >
+        <div
+            class="bg-[#F9F6EE] px-5 py-3 rounded-2xl flex items-center gap-3.5 border border-white/40 backdrop-blur-sm"
+        >
+            <!-- Image PNG sans fond de la Réunion -->
+            <Image
+                src={drapeauReunion}
+                alt="Île de La Réunion"
+                class="w-9 h-auto object-contain drop-shadow-sm"
+                width={36}
+                height={36}
+            />
+
+            <!-- Textes identiques à la maquette -->
+            <div class="text-left pr-1">
+                <span
+                    class="block text-[10px] uppercase tracking-widest font-extrabold text-[#526058] leading-tight"
+                >
+                    RECETTES PÉI
+                </span>
+                <span
+                    class="block text-[15px] font-serif font-black text-foret leading-none mt-0.5"
+                >
+                    100% Authentique
+                </span>
+            </div>
         </div>
     </div>
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center px-6 py-20">
-        <!-- Badge minimaliste avec fond plus contrasté -->
-        <span
-            class="inline-block px-5 py-2 rounded-full bg-black/40 backdrop-blur-md text-safran text-xs font-bold uppercase tracking-widest mb-6 border border-safran/50 shadow-md"
-        >
-            Cuisine Créole Traditionnelle
-        </span>
-
-        <!-- Titre avec ombre portée lourde pour découper parfaitement le riz blanc -->
-        <h1
-            class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
-        >
-            L'esprit du Péi, <br />le goût du vrai Carry.
-        </h1>
-
-        <p
-            class="text-lg md:text-xl text-sable/95 max-w-2xl mx-auto mb-10 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
-        >
-            Toute l'authenticité de l'Île de La Réunion à Toulouse. Des recettes
-            ancestrales, mijotées selon la pure tradition réunionnaise.
-        </p>
-
-        <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-            <a
-                href="#carte"
-                class="w-full sm:w-auto px-8 py-4 bg-safran text-foret font-bold rounded-full hover:bg-safran-hover transition-all shadow-xl hover:scale-105 text-center"
+    <!-- Contenu principal aligné à gauche -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full">
+        <div class="max-w-xl space-y-6">
+            <!-- Eyebrow SEO/GEO -->
+            <div
+                class="inline-block bg-black/40 border border-safran/40 backdrop-blur-md px-3.5 py-1.5 rounded-full"
             >
-                Découvrir la Carte
-            </a>
-            <a
-                href="#marches"
-                class="w-full sm:w-auto px-8 py-4 bg-black/40 backdrop-blur-md border border-sable/40 text-sable hover:bg-black/60 rounded-full transition-all text-center font-semibold shadow-md"
+                <span
+                    class="text-safran font-bold text-xs uppercase tracking-widest"
+                >
+                    Cuisine Créole Traditionnelle • Toulouse (31)
+                </span>
+            </div>
+
+            <!-- Titre H1 -->
+            <h1
+                class="text-4xl sm:text-6xl font-serif font-bold text-sable leading-tight drop-shadow-lg"
             >
-                Où nous trouver ?
-            </a>
+                L’esprit du Péi, <br />
+                <span class="text-safran">le goût du vrai Carry.</span>
+            </h1>
+
+            <!-- Description SEO Local -->
+            <p
+                class="text-sable/95 text-base sm:text-lg leading-relaxed font-normal drop-shadow"
+            >
+                Toute l'authenticité de l'Île de La Réunion à Toulouse. Des
+                recettes ancestrales, mijotées selon la pure tradition
+                réunionnaise.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 pt-3">
+                <a
+                    href="/devis-traiteur"
+                    class="w-full sm:w-auto bg-safran text-foret font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full shadow-xl hover:bg-sable hover:text-foret transition-all text-center"
+                >
+                    Demander un devis
+                </a>
+
+                <a
+                    href="#specialites"
+                    class="w-full sm:w-auto border-2 border-sable/80 bg-black/30 backdrop-blur-sm text-sable font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-sable hover:text-foret transition-all text-center"
+                >
+                    Voir nos spécialités
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- JSON-LD IA & SEO Local -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CateringService",
+        "name": "La Cuisine du Mafatais",
+        "description": "Traiteur réunionnais à Toulouse. Carrys, Rougails, Sarcives et Samoussas faits maison.",
+        "url": "https://lacuisinedumafatais.fr",
+        "telephone": "+33635304659",
+        "areaServed": "Toulouse et Haute-Garonne (31)",
+        "servesCuisine": "Réunionnaise"
+    }
+</script>

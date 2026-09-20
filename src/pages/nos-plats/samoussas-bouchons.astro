@@ -1,38 +1,45 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
+
+// Imports d'images optimisés depuis le dossier src/assets/images/
+import imgBouchons from "../../assets/images/bouchons.jpg";
+import imgSamoussas from "../../assets/images/samoussas.jpeg";
+import imgAcras from "../../assets/images/acras.jpg";
+import imgBonbonPiment from "../../assets/images/bonbon-piment.jpg";
 ---
 
 <Layout
     title="Bouchons Maison, Samoussas & Snacks Créoles à Toulouse | La Cuisine du Mafatais"
     description="Bouchons artisanaux (porc/combava, poulet), samoussas croustillants, accras de morue et bonbons piment faits maison à Toulouse. Vente sur le marché et traiteur."
 >
-    <Navbar />
-
     <main class="py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Fil d'Ariane -->
-            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+            <!-- Fil d'Ariane Sémantique -->
+            <nav
+                aria-label="Fil d'Ariane"
+                class="text-xs text-foret/60 mb-8 flex items-center gap-2"
+            >
                 <a href="/" class="hover:text-safran transition-colors"
                     >Accueil</a
                 >
-                <span>/</span>
+                <span aria-hidden="true">/</span>
                 <a href="/#carte" class="hover:text-safran transition-colors"
                     >Nos Plats</a
                 >
-                <span>/</span>
-                <span class="text-foret font-semibold"
+                <span aria-hidden="true">/</span>
+                <span class="text-foret font-semibold" aria-current="page"
                     >Snacks & Street-Food Créole</span
                 >
             </nav>
 
             <!-- En-tête -->
-            <div class="max-w-3xl mb-16">
+            <header class="max-w-3xl mb-16">
                 <span
                     class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
-                    >100% Fait Maison</span
                 >
+                    100% Fait Maison
+                </span>
                 <h1
                     class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
                 >
@@ -44,22 +51,25 @@ import Footer from "../../components/Footer.astro";
                     déguster chauds sur le pouce au marché ou en pièces
                     apéritives pour vos événements.
                 </p>
-            </div>
+            </header>
 
             <!-- Grille des Snacks -->
             <div class="grid md:grid-cols-2 gap-8 mb-20">
                 <!-- Snack 1 : Bouchons Fait Maison -->
-                <div
+                <article
                     class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
                 >
                     <div>
                         <div
                             class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
                         >
-                            <img
-                                src="/images/bouchons.jpg"
-                                alt="Bouchons réunionnais faits maison"
+                            <Image
+                                src={imgBouchons}
+                                alt="Bouchons réunionnais faits maison porc et combava"
                                 class="w-full h-full object-cover"
+                                widths={[400, 800]}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="eager"
                             />
                         </div>
                         <span
@@ -84,20 +94,23 @@ import Footer from "../../components/Footer.astro";
                         <span>Variétés : Porc / Combava ou Poulet</span>
                         <span class="text-terracotta">1 € / pièce</span>
                     </div>
-                </div>
+                </article>
 
                 <!-- Snack 2 : Samoussas -->
-                <div
+                <article
                     class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
                 >
                     <div>
                         <div
                             class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
                         >
-                            <img
-                                src="/images/samoussas.jpeg"
-                                alt="Samoussas réunionnais croustillants"
+                            <Image
+                                src={imgSamoussas}
+                                alt="Samoussas réunionnais croustillants garnis"
                                 class="w-full h-full object-cover"
+                                widths={[400, 800]}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
                             />
                         </div>
                         <span
@@ -124,20 +137,23 @@ import Footer from "../../components/Footer.astro";
                             >5 € les 4 / 10 € les 10</span
                         >
                     </div>
-                </div>
+                </article>
 
                 <!-- Snack 3 : Accras de Morue -->
-                <div
+                <article
                     class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
                 >
                     <div>
                         <div
                             class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
                         >
-                            <img
-                                src="/images/acras.jpg"
-                                alt="Accras de morue dorés"
+                            <Image
+                                src={imgAcras}
+                                alt="Accras de morue dorés et moelleux faits maison"
                                 class="w-full h-full object-cover"
+                                widths={[400, 800]}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
                             />
                         </div>
                         <span
@@ -162,20 +178,23 @@ import Footer from "../../components/Footer.astro";
                         <span>Portion de 8 pièces</span>
                         <span class="text-terracotta">6 € les 8</span>
                     </div>
-                </div>
+                </article>
 
                 <!-- Snack 4 : Bonbons Piment -->
-                <div
+                <article
                     class="bg-sable-dark/30 rounded-3xl p-6 md:p-8 border border-foret/5 flex flex-col justify-between"
                 >
                     <div>
                         <div
                             class="rounded-2xl overflow-hidden h-56 mb-6 shadow-md"
                         >
-                            <img
-                                src="/images/bonbon-piment.jpg"
-                                alt="Bonbons piment traditionnels"
+                            <Image
+                                src={imgBonbonPiment}
+                                alt="Bonbons piment réunionnais traditionnels aux pois du cap"
                                 class="w-full h-full object-cover"
+                                widths={[400, 800]}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
                             />
                         </div>
                         <span
@@ -200,11 +219,11 @@ import Footer from "../../components/Footer.astro";
                         <span>Portion de 8 pièces</span>
                         <span class="text-terracotta">6 € les 8</span>
                     </div>
-                </div>
+                </article>
             </div>
 
             <!-- Call to action -->
-            <div
+            <section
                 class="p-8 md:p-12 rounded-3xl bg-foret text-sable text-center max-w-4xl mx-auto shadow-2xl"
             >
                 <h3 class="text-2xl md:text-3xl font-serif font-bold mb-4">
@@ -230,9 +249,85 @@ import Footer from "../../components/Footer.astro";
                         Voir nos marchés
                     </a>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
-
-    <Footer />
 </Layout>
+
+<!-- JSON-LD SEO Local & Menu Items avec Tarifs -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://lacuisinedumafatais.fr"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Nos Plats",
+                        "item": "https://lacuisinedumafatais.fr/#carte"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Snacks & Street-Food Créole",
+                        "item": "https://lacuisinedumafatais.fr/nos-plats/samoussas-bouchons"
+                    }
+                ]
+            },
+            {
+                "@type": "Menu",
+                "name": "Snacks, Bouchons & Street-Food Réunionnaise",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "Bouchons Artisanaux",
+                        "description": "Bouchées à la vapeur porc/combava ou poulet.",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "1.00",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Samoussas Créoles",
+                        "description": "Triangles croustillants bœuf ou jambon/gruyère.",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "5.00",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Accras de Morue",
+                        "description": "Portion de 8 beignets dorés de morue.",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "6.00",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Bonbons Piment",
+                        "description": "Portion de 8 galettes de pois du cap épicées.",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "6.00",
+                            "priceCurrency": "EUR"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+</script>

@@ -1,292 +1,248 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+
+// Importation des images pour l'optimisation automatique Astro (Ajuste les chemins si besoin)
+import imgMarmites from "../assets/images/specialites-reunionnaises.webp";
+import imgSarcive from "../assets/images/sarcive.jpg";
+import imgBouchons from "../assets/images/bouchons-samoussas.jpeg";
+import imgMarche from "../assets/images/stand-marche.jpg";
 ---
 
-<Layout
-    title="Traiteur Réunionnais & Buffet Créole à Toulouse | Devis Gratuit | La Cuisine du Mafatais"
-    description="Service traiteur réunionnais sur-mesure à Toulouse et en Haute-Garonne. Repas de groupe, mariages, anniversaires et événements d'entreprise. Devis gratuit."
->
-    <Navbar />
-
-    <main class="py-12 md:py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Fil d'Ariane -->
-            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
-                <a href="/" class="hover:text-safran transition-colors"
-                    >Accueil</a
-                >
-                <span>/</span>
-                <span class="text-foret font-semibold">Prestation Traiteur</span
-                >
-            </nav>
-
-            <!-- Hero Traiteur -->
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                <div>
-                    <span
-                        class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
-                        >Événements & Réceptions</span
-                    >
-                    <h1
-                        class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
-                    >
-                        Traiteur Créole pour Vos Événements à Toulouse
-                    </h1>
-                    <p
-                        class="text-base md:text-lg text-foret/80 font-light leading-relaxed mb-6"
-                    >
-                        Vous organisez un mariage, un anniversaire, une
-                        cousinade ou un repas d'entreprise ? Apportez la chaleur
-                        et la convivialité des grands repas de famille
-                        réunionnais à vos invités.
-                    </p>
-
-                    <div class="space-y-3 text-sm text-foret/80">
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
-                            >
-                            <span
-                                ><strong
-                                    >Marmites géantes traditionnelles</strong
-                                > servies chaudes sur place</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
-                            >
-                            <span
-                                ><strong>Formules sur-mesure :</strong> Cocktail apéritif,
-                                plat chaud en marmite & desserts</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
-                            >
-                            <span
-                                >De <strong>15 à plus de 150 personnes</strong> à
-                                Toulouse et en Haute-Garonne</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="rounded-3xl overflow-hidden shadow-2xl border border-foret/10 h-[380px] md:h-[450px]"
-                >
-                    <img
-                        src="/images/stand-marche.jpg"
-                        alt="Service traiteur La Cuisine du Mafatais"
-                        class="w-full h-full object-cover"
-                    />
-                </div>
-            </div>
-
-            <!-- Formulaire de Devis Traiteur avec Web3Forms -->
-            <div
-                class="bg-sable-dark/40 rounded-3xl p-8 md:p-12 border border-foret/10 max-w-4xl mx-auto shadow-xl"
+<section id="carte" class="py-20 bg-sable-dark/40 border-y border-foret/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- En-tête de section -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span
+                class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
             >
-                <div class="text-center mb-10">
+                Savoir-faire Créole
+            </span>
+            <h2 class="text-3xl md:text-5xl font-serif text-foret mb-4">
+                À la Carte & Sur le Marché
+            </h2>
+            <p class="text-foret/70 text-base">
+                Marmites traditionnelles, spécialités au fumoir et street-food
+                faite maison.
+            </p>
+        </div>
+
+        <!-- 1. Grande Card Hero Premium : Marmites & Plats du Jour -->
+        <a
+            href="/nos-plats/carrys-et-rougails"
+            class="group mb-8 block rounded-3xl overflow-hidden shadow-xl relative min-h-[380px] md:min-h-[420px] border border-foret/10"
+        >
+            <Image
+                src={imgMarmites}
+                alt="Marmites réunionnaises traditionnelles avec carry poulet et rougail saucisse"
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                widths={[640, 1024, 1500]}
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                loading="lazy"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 flex items-end p-8 md:p-12"
+            >
+                <div class="max-w-2xl">
                     <span
-                        class="text-xs font-bold text-terracotta uppercase tracking-widest block mb-1"
-                        >Sans engagement</span
+                        class="px-3.5 py-1.5 rounded-full bg-safran text-foret text-[11px] font-bold uppercase tracking-wider inline-block mb-3 shadow-md"
                     >
-                    <h2
-                        class="text-2xl md:text-3xl font-serif font-bold text-foret mb-2"
+                        Plats Phares & Marmites
+                    </span>
+                    <h3
+                        class="text-white font-serif text-2xl md:text-4xl font-bold mb-3 leading-tight group-hover:text-safran transition-colors"
                     >
-                        Demander un Devis Gratuit
-                    </h2>
-                    <p class="text-xs md:text-sm text-foret/70">
-                        Remplissez le formulaire ci-dessous. Nous vous répondons
-                        sous 24h à 48h.
+                        Carrys, Rougails & Sautés Traditionnels
+                    </h3>
+                    <p
+                        class="text-sable/90 text-sm md:text-base leading-relaxed mb-4 font-light"
+                    >
+                        Les incontournables de l'île : Carry Poulet, Rougail
+                        Saucisse fumé et Sauté de poulet aux légumes. Tous nos
+                        plats sont servis avec leur riz basmati, grains et
+                        rougail piment.
                     </p>
-                </div>
-
-                <form
-                    action="https://api.web3forms.com/submit"
-                    method="POST"
-                    class="space-y-6"
-                >
-                    <!-- Clé d'accès Web3Forms -->
-                    <input
-                        type="hidden"
-                        name="access_key"
-                        value="TON_ACCESS_KEY_WEB3FORMS"
-                    />
-                    <input
-                        type="hidden"
-                        name="subject"
-                        value="Nouvelle demande de devis traiteur - La Cuisine du Mafatais"
-                    />
-                    <input
-                        type="hidden"
-                        name="from_name"
-                        value="La Cuisine du Mafatais Website"
-                    />
-
-                    <!-- Nom & Email -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Nom & Prénom *</label
-                            >
-                            <input
-                                type="text"
-                                name="nom"
-                                required
-                                placeholder="Ex: Jean Dupont"
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Email *</label
-                            >
-                            <input
-                                type="email"
-                                name="email"
-                                required
-                                placeholder="Ex: jean.dupont@exemple.fr"
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Téléphone & Type d'événement -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Téléphone *</label
-                            >
-                            <input
-                                type="tel"
-                                name="telephone"
-                                required
-                                placeholder="Ex: 06 35 30 46 59"
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Type d'événement *</label
-                            >
-                            <select
-                                name="type_evenement"
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            >
-                                <option>Anniversaire / Fête de famille</option>
-                                <option>Mariage / Retour de mariage</option>
-                                <option>Repas d'entreprise / Séminaire</option>
-                                <option
-                                    >Autre événement privé / Associatif</option
-                                >
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Date, Nombre de personnes & Lieu -->
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Date prévue *</label
-                            >
-                            <input
-                                type="date"
-                                name="date_evenement"
-                                required
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Nombre d'invités *</label
-                            >
-                            <input
-                                type="number"
-                                name="nombre_invites"
-                                min="10"
-                                placeholder="Ex: 40"
-                                required
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                                >Lieu / Ville *</label
-                            >
-                            <input
-                                type="text"
-                                name="lieu"
-                                placeholder="Ex: Toulouse, Blagnac..."
-                                required
-                                class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-foret uppercase tracking-wider mb-2"
-                            >Plats souhaités & Précisions</label
-                        >
-                        <textarea
-                            name="message"
-                            rows="4"
-                            placeholder="Précisez votre besoin (ex: Cocktail apéritif samoussas/bouchons + Carry Poulet et Rougail Saucisse en plat chaud...)"
-                            class="w-full px-4 py-3 rounded-xl bg-sable border border-foret/20 text-sm text-foret focus:outline-none focus:border-safran"
-                        ></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="w-full py-4 bg-safran text-foret font-bold rounded-xl hover:bg-safran-hover transition-all text-center shadow-lg uppercase tracking-wider text-sm cursor-pointer"
+                    <span
+                        class="inline-flex items-center gap-2 text-xs font-bold text-safran group-hover:translate-x-1 transition-transform"
                     >
-                        Envoyer ma demande de devis
-                    </button>
-                </form>
-
-                <!-- Contact Direct Rapide avec les vraies coordonnées -->
-                <div class="mt-12 text-center border-t border-foret/10 pt-8">
-                    <p class="text-xs md:text-sm text-foret/70 mb-3">
-                        Une question sur les marchés, une réservation de portion
-                        ou un renseignement rapide ?
-                    </p>
-                    <div
-                        class="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs md:text-sm font-bold text-foret"
-                    >
-                        <a
-                            href="tel:0635304659"
-                            class="flex items-center gap-2 hover:text-safran transition-colors"
+                        Découvrir les plats & tarifs <span aria-hidden="true"
+                            >→</span
                         >
-                            <span>📞</span> 06 35 30 46 59
-                        </a>
-                        <span class="hidden sm:inline text-foret/30">•</span>
-                        <a
-                            href="mailto:mafatais97490@gmail.com"
-                            class="flex items-center gap-2 hover:text-safran transition-colors"
-                        >
-                            <span>✉️</span> mafatais97490@gmail.com
-                        </a>
-                    </div>
+                    </span>
                 </div>
             </div>
-        </div>
-    </main>
+        </a>
 
-    <Footer />
-</Layout>
+        <!-- 2. Les 3 cartes complémentaires -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Carte 1 : Sarcives & Fumoir -->
+            <a
+                href="/nos-plats/sarcives-fumoir"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+            >
+                <div class="overflow-hidden h-48 relative">
+                    <Image
+                        src={imgSarcive}
+                        alt="Sarcives de porc marinées et grillades réunionnaises au fumoir"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        widths={[400, 800]}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        loading="lazy"
+                    />
+                    <span
+                        class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                    >
+                        Spécialités Fumoir
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span
+                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                        >
+                            Rôti & Mariné
+                        </span>
+                        <h3
+                            class="text-lg font-serif text-foret font-bold mb-2 group-hover:text-safran transition-colors"
+                        >
+                            Sarcives & Grillades
+                        </h3>
+                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                            Ribs, filet mignon et poulet fermier Label Rouge
+                            cuits au fumoir avec notre marinade secrète.
+                        </p>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-foret group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                    >
+                        Voir les grillades <span aria-hidden="true">→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Carte 2 : Snacks & Bouchons Maison -->
+            <a
+                href="/nos-plats/samoussas-bouchons"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+            >
+                <div class="overflow-hidden h-48 relative">
+                    <Image
+                        src={imgBouchons}
+                        alt="Bouchons réunionnais porc combava faits maison et samoussas"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        widths={[400, 800]}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        loading="lazy"
+                    />
+                    <span
+                        class="absolute top-3 left-3 bg-safran text-foret text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                    >
+                        100% Fait Maison
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span
+                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                        >
+                            Street-Food Créole
+                        </span>
+                        <h3
+                            class="text-lg font-serif text-foret font-bold mb-2 group-hover:text-safran transition-colors"
+                        >
+                            Bouchons & Snacks Péi
+                        </h3>
+                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                            Bouchons porc/combava et poulet faits maison,
+                            samoussas, accras de morue et bonbons piment.
+                        </p>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-foret group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                    >
+                        La sélection apéro <span aria-hidden="true">→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Carte 3 : Service Traiteur & Événements -->
+            <a
+                href="/devis-traiteur"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+            >
+                <div class="overflow-hidden h-48 relative">
+                    <Image
+                        src={imgMarche}
+                        alt="Stand traiteur réunionnais La Cuisine du Mafatais sur le marché à Toulouse"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        widths={[400, 800]}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        loading="lazy"
+                    />
+                    <span
+                        class="absolute top-3 left-3 bg-foret text-sable text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                    >
+                        Sur-Mesure
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span
+                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                        >
+                            Événementiel
+                        </span>
+                        <h3
+                            class="text-lg font-serif text-foret font-bold mb-2 group-hover:text-safran transition-colors"
+                        >
+                            Prestations Traiteur
+                        </h3>
+                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                            Buffets créoles, mariages et repas d'entreprise
+                            servis à la marmite partout en Haute-Garonne.
+                        </p>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-foret group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                    >
+                        Demander un devis <span aria-hidden="true">→</span>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Données structurées pour le référencement Google & Moteurs IA -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Spécialités créoles réunionnaises à Toulouse",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Carrys, Rougails & Sautés",
+                "url": "https://lacuisinedumafatais.fr/nos-plats/carrys-et-rougails"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Sarcives & Grillades au fumoir",
+                "url": "https://lacuisinedumafatais.fr/nos-plats/sarcives-fumoir"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bouchons & Snacks Péi faits maison",
+                "url": "https://lacuisinedumafatais.fr/nos-plats/samoussas-bouchons"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Prestations Traiteur Événementiel",
+                "url": "https://lacuisinedumafatais.fr/devis-traiteur"
+            }
+        ]
+    }
+</script>

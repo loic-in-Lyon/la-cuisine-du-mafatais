@@ -1,25 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
 import DevisForm from "../components/DevisForm.astro";
+import { Image } from "astro:assets";
+
+// Import de l'image optimisée depuis src/assets/images/
+import imgStandMarche from "../assets/images/stand-marche.jpg";
 ---
 
 <Layout
     title="Traiteur Réunionnais & Buffet Créole à Toulouse | Devis Gratuit | La Cuisine du Mafatais"
     description="Service traiteur réunionnais sur-mesure à Toulouse et en Haute-Garonne. Repas de groupe, mariages, anniversaires et événements d'entreprise. Devis gratuit."
 >
-    <Navbar />
-
     <main class="py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Fil d'Ariane -->
-            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+            <!-- Fil d'Ariane Sémantique -->
+            <nav
+                aria-label="Fil d'Ariane"
+                class="text-xs text-foret/60 mb-8 flex items-center gap-2"
+            >
                 <a href="/" class="hover:text-safran transition-colors"
                     >Accueil</a
                 >
-                <span>/</span>
-                <span class="text-foret font-semibold">Prestation Traiteur</span
+                <span aria-hidden="true">/</span>
+                <span class="text-foret font-semibold" aria-current="page"
+                    >Prestation Traiteur</span
                 >
             </nav>
 
@@ -28,8 +32,9 @@ import DevisForm from "../components/DevisForm.astro";
                 <div>
                     <span
                         class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
-                        >Événements & Réceptions</span
                     >
+                        Événements & Réceptions
+                    </span>
                     <h1
                         class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight mb-4"
                     >
@@ -47,45 +52,51 @@ import DevisForm from "../components/DevisForm.astro";
                     <div class="space-y-3 text-sm text-foret/80">
                         <div class="flex items-center gap-3">
                             <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs shrink-0"
                             >
-                            <span
-                                ><strong
-                                    >Marmites géantes traditionnelles</strong
-                                > servies chaudes sur place</span
-                            >
+                                ✓
+                            </span>
+                            <span>
+                                <strong>Marmites géantes traditionnelles</strong
+                                > servies chaudes sur place
+                            </span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs shrink-0"
                             >
-                            <span
-                                ><strong>Formules sur-mesure :</strong> Cocktail apéritif,
-                                plat chaud en marmite & desserts</span
-                            >
+                                ✓
+                            </span>
+                            <span>
+                                <strong>Formules sur-mesure :</strong> Cocktail apéritif,
+                                plat chaud en marmite & desserts
+                            </span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span
-                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs"
-                                >✓</span
+                                class="w-6 h-6 rounded-full bg-safran/20 text-safran font-bold flex items-center justify-center text-xs shrink-0"
                             >
-                            <span
-                                >De <strong>15 à plus de 150 personnes</strong> à
-                                Toulouse et en Haute-Garonne</span
-                            >
+                                ✓
+                            </span>
+                            <span>
+                                De <strong>15 à plus de 150 personnes</strong> à Toulouse
+                                et en Haute-Garonne
+                            </span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Image optimisée -->
                 <div
                     class="rounded-3xl overflow-hidden shadow-2xl border border-foret/10 h-[380px] md:h-[450px]"
                 >
-                    <img
-                        src="/images/stand-marche.jpg"
-                        alt="Service traiteur La Cuisine du Mafatais"
+                    <Image
+                        src={imgStandMarche}
+                        alt="Service traiteur et buffets réunionnais La Cuisine du Mafatais"
                         class="w-full h-full object-cover"
+                        widths={[600, 1000]}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="eager"
                     />
                 </div>
             </div>
@@ -94,6 +105,37 @@ import DevisForm from "../components/DevisForm.astro";
             <DevisForm />
         </div>
     </main>
-
-    <Footer />
 </Layout>
+
+<!-- JSON-LD SEO Local & Données Structurées Traiteur -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://lacuisinedumafatais.fr"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Prestation Traiteur",
+                        "item": "https://lacuisinedumafatais.fr/devis-traiteur"
+                    }
+                ]
+            },
+            {
+                "@type": "CateringService",
+                "name": "La Cuisine du Mafatais - Traiteur Réunionnais",
+                "description": "Service de traiteur créole et réunionnais sur-mesure pour mariages, anniversaires et événements d'entreprise à Toulouse et en Haute-Garonne.",
+                "areaServed": ["Toulouse", "Haute-Garonne", "Tournefeuille"],
+                "servesCuisine": "Réunionnaise"
+            }
+        ]
+    }
+</script>

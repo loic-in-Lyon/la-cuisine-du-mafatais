@@ -1,40 +1,48 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
+
+// Import de l'image optimisée depuis src/assets/images/
+import imgSarcive from "../../assets/images/sarcive.jpg";
 ---
 
 <Layout
     title="Sarcives Réunionnaises & Grillades au Fumoir à Toulouse | La Cuisine du Mafatais"
     description="Découvrez nos sarcives traditionnelles (ribs, filet mignon) et notre poulet fermier cuit au fumoir. Spécialités réunionnaises rôties et marinées à Toulouse."
 >
-    <Navbar />
-
     <main class="py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Fil d'Ariane -->
-            <nav class="text-xs text-foret/60 mb-8 flex items-center gap-2">
+            <!-- Fil d'Ariane Sémantique -->
+            <nav
+                aria-label="Fil d'Ariane"
+                class="text-xs text-foret/60 mb-8 flex items-center gap-2"
+            >
                 <a href="/" class="hover:text-safran transition-colors"
                     >Accueil</a
                 >
-                <span>/</span>
+                <span aria-hidden="true">/</span>
                 <a href="/#carte" class="hover:text-safran transition-colors"
                     >Nos Plats</a
                 >
-                <span>/</span>
-                <span class="text-foret font-semibold">Sarcives & Fumoir</span>
+                <span aria-hidden="true">/</span>
+                <span class="text-foret font-semibold" aria-current="page"
+                    >Sarcives & Fumoir</span
+                >
             </nav>
 
             <!-- En-tête / Hero Produit -->
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                <!-- Photo de la sarcive -->
+                <!-- Photo de la sarcive optimisée -->
                 <div
                     class="relative rounded-3xl overflow-hidden shadow-2xl border border-foret/10"
                 >
-                    <img
-                        src="/images/sarcive.jpg"
-                        alt="Sarcives réunionnaises rôties et dorées"
+                    <Image
+                        src={imgSarcive}
+                        alt="Sarcives réunionnaises rôties, dorées et caramélisées"
                         class="w-full h-[450px] md:h-[550px] object-cover"
+                        widths={[600, 1000]}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="eager"
                     />
                     <span
                         class="absolute top-6 left-6 px-4 py-1.5 bg-terracotta text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-md"
@@ -47,8 +55,9 @@ import Footer from "../../components/Footer.astro";
                 <div class="space-y-6">
                     <span
                         class="text-xs font-bold text-safran uppercase tracking-widest block"
-                        >Marinade & Cuisson Lente</span
                     >
+                        Marinade & Cuisson Lente
+                    </span>
                     <h1
                         class="text-3xl md:text-5xl font-serif font-bold text-foret leading-tight"
                     >
@@ -64,9 +73,9 @@ import Footer from "../../components/Footer.astro";
                     <div
                         class="p-6 rounded-2xl bg-sable-dark/50 border border-foret/10 space-y-3"
                     >
-                        <h3 class="font-serif font-bold text-foret text-base">
+                        <h2 class="font-serif font-bold text-foret text-base">
                             Nos découpes & viandes au choix :
-                        </h3>
+                        </h2>
                         <ul
                             class="text-sm text-foret/70 space-y-2 list-disc list-inside"
                         >
@@ -111,48 +120,101 @@ import Footer from "../../components/Footer.astro";
             </div>
 
             <!-- Arguments / Savoir-faire -->
-            <div
+            <section
                 class="bg-sable-dark/30 rounded-3xl p-8 md:p-12 border border-foret/5 grid md:grid-cols-3 gap-8 text-center md:text-left mb-16"
             >
                 <div class="space-y-2">
-                    <span class="text-2xl font-serif text-terracotta font-bold"
+                    <span
+                        class="text-2xl font-serif text-terracotta font-bold block"
                         >01.</span
                     >
-                    <h4 class="font-serif font-bold text-foret text-lg">
+                    <h3 class="font-serif font-bold text-foret text-lg">
                         24h de Marinade
-                    </h4>
+                    </h3>
                     <p class="text-xs text-foret/70 leading-relaxed">
                         Miel péi, sauce soja, anis étoilé et liqueur locale pour
                         imprégner la viande jusqu'à l'os.
                     </p>
                 </div>
                 <div class="space-y-2">
-                    <span class="text-2xl font-serif text-safran font-bold"
+                    <span
+                        class="text-2xl font-serif text-safran font-bold block"
                         >02.</span
                     >
-                    <h4 class="font-serif font-bold text-foret text-lg">
+                    <h3 class="font-serif font-bold text-foret text-lg">
                         Fumage Traditionnel
-                    </h4>
+                    </h3>
                     <p class="text-xs text-foret/70 leading-relaxed">
                         Une cuisson maîtrisée au fumoir pour apporter cette note
                         boisée incomparable et conserver toute la tendreté.
                     </p>
                 </div>
                 <div class="space-y-2">
-                    <span class="text-2xl font-serif text-foret font-bold"
+                    <span class="text-2xl font-serif text-foret font-bold block"
                         >03.</span
                     >
-                    <h4 class="font-serif font-bold text-foret text-lg">
+                    <h3 class="font-serif font-bold text-foret text-lg">
                         Achat à la Pièce ou au Poids
-                    </h4>
+                    </h3>
                     <p class="text-xs text-foret/70 leading-relaxed">
                         À déguster chaud sur le marché ou à emporter chez vous
                         pour vos apéritifs et repas de famille.
                     </p>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
-
-    <Footer />
 </Layout>
+
+<!-- JSON-LD SEO Local & Données Structurées Menu -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://lacuisinedumafatais.fr"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Nos Plats",
+                        "item": "https://lacuisinedumafatais.fr/#carte"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Sarcives & Fumoir",
+                        "item": "https://lacuisinedumafatais.fr/nos-plats/sarcives-fumoir"
+                    }
+                ]
+            },
+            {
+                "@type": "Menu",
+                "name": "Sarcives & Grillades au Fumoir",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "Sarcive Ribs",
+                        "description": "Travers de porc caramélisés et fondants marinés au miel et épices."
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Sarcive Filet Mignon",
+                        "description": "Pièce noble de porc, tendre et légèrement laquée."
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Poulet Fermier au Fumoir",
+                        "description": "Poulet Label Rouge fumé au bois avec une peau croustillante."
+                    }
+                ]
+            }
+        ]
+    }
+</script>

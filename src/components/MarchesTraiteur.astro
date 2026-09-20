@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import imgStandJimmy from "../assets/images/stand-jimmy.jpg";
 ---
 
 <section id="marches" class="py-20 px-6 max-w-7xl mx-auto">
@@ -9,11 +10,14 @@
             <div
                 class="rounded-3xl overflow-hidden shadow-xl border border-foret/10 relative"
             >
-                <!-- Photo avec filtre chaud léger -->
-                <img
-                    src="/images/stand-jimmy.jpg"
-                    alt="Jimmy sur le marché de Toulouse avec le drapeau réunionnais"
+                <!-- Photo optimisée avec filtre chaud léger -->
+                <Image
+                    src={imgStandJimmy}
+                    alt="Jimmy sur le marché de Tournefeuille proposant des spécialités réunionnaises"
                     class="w-full h-[480px] object-cover object-center filter brightness-95 contrast-[1.03] sepia-[0.10]"
+                    widths={[500, 800, 1024]}
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    loading="lazy"
                 />
                 <!-- Overlay teinté chaud/sombre pour fondre l'image dans la charte -->
                 <div
@@ -32,8 +36,9 @@
                 </p>
                 <span
                     class="text-[10px] uppercase tracking-widest font-bold block mt-2 opacity-80"
-                    >— L'équipe Mafatais</span
                 >
+                    — L'équipe Mafatais
+                </span>
             </div>
         </div>
 
@@ -41,18 +46,20 @@
         <div class="space-y-6">
             <span
                 class="text-xs font-bold text-safran uppercase tracking-widest block"
-                >Proximité & Convivialité</span
             >
+                Proximité & Convivialité
+            </span>
             <h2
                 class="text-3xl md:text-5xl font-serif text-foret leading-tight"
             >
                 Retrouvez-nous sur les marchés de Toulouse
             </h2>
             <p class="text-foret/80 leading-relaxed font-normal">
-                Chaque semaine, retrouvez nos marmites fumantes sur les marchés
-                de la région toulousaine (notamment Plaisance-du-Touch).
-                L'occasion idéale pour sentir les effluves de gingembre, de
-                curcuma et repartir avec vos plats chauds tout prêts.
+                Chaque semaine, retrouvez nos marmites fumantes sur le marché de
+                plein vent de <strong>Tournefeuille</strong> (Allées des Sports) le
+                <strong>dimanche de 7h00 à 14h00</strong>. L'occasion idéale
+                pour sentir les effluves de gingembre, de curcuma et repartir
+                avec vos plats chauds tout prêts.
             </p>
 
             <!-- Bloc Traiteur / Privatisation -->
@@ -62,7 +69,7 @@
             >
                 <div class="flex items-center gap-3">
                     <div
-                        class="w-10 h-10 rounded-full bg-foret text-sable flex items-center justify-center font-serif font-bold text-lg"
+                        class="w-10 h-10 rounded-full bg-foret text-sable flex items-center justify-center font-serif font-bold text-lg shrink-0"
                     >
                         974
                     </div>
@@ -82,10 +89,14 @@
                     marmite ou prestations clés en main.
                 </p>
                 <a
-                    href="/contact"
-                    class="inline-block px-6 py-3 bg-foret text-sable rounded-full hover:bg-foret-light transition-all text-sm font-semibold shadow-md"
+                    href="/devis-traiteur"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-foret text-sable rounded-full hover:bg-foret-light transition-all text-sm font-semibold shadow-md group"
                 >
-                    Demander un devis personnalisé →
+                    Demander un devis personnalisé
+                    <span
+                        class="group-hover:translate-x-1 transition-transform"
+                        aria-hidden="true">→</span
+                    >
                 </a>
             </div>
         </div>

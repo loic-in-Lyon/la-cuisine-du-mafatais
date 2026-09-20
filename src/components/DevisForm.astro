@@ -160,6 +160,28 @@
             ></textarea>
         </div>
 
+        <!-- Case à cocher RGPD -->
+        <div class="flex items-start gap-3 text-xs text-foret/80">
+            <input
+                type="checkbox"
+                id="consentement_rgpd"
+                name="consentement_rgpd"
+                required
+                class="mt-1 rounded border-foret/30 text-safran focus:ring-safran"
+            />
+            <label for="consentement_rgpd">
+                J'accepte que les informations saisies soient utilisées pour me
+                recontacter et établir mon devis traiteur. Pour en savoir plus,
+                consultez notre
+                <a
+                    href="/politique-de-confidentialite"
+                    target="_blank"
+                    class="underline font-bold text-foret hover:text-safran"
+                    >politique de confidentialité</a
+                >.
+            </label>
+        </div>
+
         <button
             type="submit"
             id="submit-btn"
