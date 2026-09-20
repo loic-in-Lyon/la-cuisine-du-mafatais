@@ -26,7 +26,7 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
 ---
 
 <header
-    class="sticky top-0 z-50 bg-sable/95 backdrop-blur-md border-b border-foret/10 transition-all"
+    class="sticky top-0 z-50 bg-sable/95 backdrop-blur-md border-b border-foret/20 transition-all"
 >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <!-- Logo & Nom -->
@@ -42,19 +42,22 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                     >La Cuisine du Mafatais</span
                 >
                 <span
-                    class="block text-[10px] uppercase tracking-widest text-foret/70 font-sans"
+                    class="block text-[10px] uppercase tracking-widest text-foret font-sans font-semibold"
                     >Traiteur Réunionnais Toulouse</span
                 >
             </div>
         </a>
 
         <!-- Navigation Desktop -->
-        <nav class="hidden md:flex items-center gap-8">
+        <nav
+            class="hidden md:flex items-center gap-6"
+            aria-label="Navigation principale"
+        >
             <a
                 href="/"
-                class={`text-sm font-medium transition-colors hover:text-safran ${
+                class={`text-sm font-medium px-3 py-2 rounded-lg transition-colors hover:bg-foret/10 ${
                     currentPath === "/"
-                        ? "text-safran font-bold underline underline-offset-4 decoration-safran"
+                        ? "text-foret font-bold bg-foret/10 underline underline-offset-4 decoration-foret"
                         : "text-foret"
                 }`}
             >
@@ -65,11 +68,12 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
             <div class="relative group py-2">
                 <button
                     type="button"
-                    class={`flex items-center gap-1.5 text-sm font-medium transition-colors group-hover:text-safran ${
+                    class={`flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-lg transition-colors hover:bg-foret/10 ${
                         isPlatsActive
-                            ? "text-safran font-bold underline underline-offset-4 decoration-safran"
+                            ? "text-foret font-bold bg-foret/10 underline underline-offset-4 decoration-foret"
                             : "text-foret"
                     }`}
+                    aria-expanded="false"
                 >
                     <span>Nos Spécialités</span>
                     <svg
@@ -77,6 +81,7 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                     >
                         <path
                             stroke-linecap="round"
@@ -87,22 +92,22 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                 </button>
 
                 <div
-                    class="absolute left-0 top-full hidden group-hover:block w-64 bg-sable border border-foret/10 rounded-2xl shadow-xl p-3 space-y-1"
+                    class="absolute left-0 top-full hidden group-hover:block w-64 bg-sable border border-foret/20 rounded-2xl shadow-xl p-3 space-y-1"
                 >
                     {
                         platLinks.map((plat) => (
                             <a
                                 href={plat.path}
-                                class={`block p-2.5 rounded-xl transition-colors hover:bg-sable-dark/50 ${
+                                class={`block p-2.5 rounded-xl transition-colors hover:bg-foret/10 ${
                                     currentPath === plat.path
-                                        ? "bg-sable-dark text-safran font-bold"
+                                        ? "bg-foret/10 text-foret font-bold"
                                         : "text-foret"
                                 }`}
                             >
                                 <div class="text-sm font-semibold">
                                     {plat.name}
                                 </div>
-                                <div class="text-[11px] text-foret/60">
+                                <div class="text-[11px] text-foret/80 font-medium">
                                     {plat.desc}
                                 </div>
                             </a>
@@ -120,11 +125,12 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
             </a>
         </nav>
 
-        <!-- Bouton Burger Mobile Seul (Header épuré sur smartphone) -->
+        <!-- Bouton Burger Mobile -->
         <button
             id="menu-btn"
-            class="md:hidden text-foret p-2 rounded-lg hover:bg-sable-dark/40 focus:outline-none"
+            class="md:hidden text-foret p-2 rounded-lg hover:bg-foret/10 focus:outline-none"
             aria-label="Ouvrir le menu de navigation"
+            aria-expanded="false"
         >
             <svg
                 id="menu-icon-open"
@@ -132,6 +138,7 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
             >
                 <path
                     stroke-linecap="round"
@@ -145,6 +152,7 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
             >
                 <path
                     stroke-linecap="round"
@@ -158,20 +166,22 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
     <!-- Menu Mobile Déroulant -->
     <div
         id="mobile-menu"
-        class="hidden md:hidden bg-sable border-b border-foret/10 px-6 py-6 space-y-4 shadow-2xl"
+        class="hidden md:hidden bg-sable border-b border-foret/20 px-6 py-6 space-y-4 shadow-2xl"
     >
         <a
             href="/"
-            class={`block text-base font-semibold py-2 border-b border-foret/5 ${
-                currentPath === "/" ? "text-safran font-bold" : "text-foret"
+            class={`block text-base font-semibold py-2 border-b border-foret/10 ${
+                currentPath === "/"
+                    ? "text-foret font-bold underline"
+                    : "text-foret"
             }`}
         >
             Accueil
         </a>
 
-        <div class="py-2 border-b border-foret/5">
+        <div class="py-2 border-b border-foret/10">
             <span
-                class="block text-xs font-bold text-safran uppercase tracking-wider mb-3"
+                class="block text-xs font-bold text-foret uppercase tracking-wider mb-3"
                 >Nos Spécialités</span
             >
             <div class="pl-3 space-y-3">
@@ -179,10 +189,10 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
                     platLinks.map((plat) => (
                         <a
                             href={plat.path}
-                            class={`block text-sm py-1 ${
+                            class={`block text-sm py-1 font-medium ${
                                 currentPath === plat.path
-                                    ? "text-safran font-bold"
-                                    : "text-foret/80"
+                                    ? "text-foret font-bold"
+                                    : "text-foret/90"
                             }`}
                         >
                             • {plat.name}
@@ -209,9 +219,10 @@ const isPlatsActive = currentPath.startsWith("/nos-plats");
 
     if (menuBtn && mobileMenu && iconOpen && iconClose) {
         menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
+            const isHidden = mobileMenu.classList.toggle("hidden");
             iconOpen.classList.toggle("hidden");
             iconClose.classList.toggle("hidden");
+            menuBtn.setAttribute("aria-expanded", String(!isHidden));
         });
     }
 </script>

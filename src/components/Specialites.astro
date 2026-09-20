@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-// Importation des images pour l'optimisation automatique Astro (Ajuste les chemins si besoin)
+// Importation des images pour l'optimisation automatique Astro
 import imgMarmites from "../assets/images/specialites-reunionnaises.webp";
 import imgSarcive from "../assets/images/sarcive.jpg";
 import imgBouchons from "../assets/images/bouchons-samoussas.jpeg";
@@ -10,17 +10,17 @@ import imgMarche from "../assets/images/stand-marche.jpg";
 
 <section id="carte" class="py-20 bg-sable-dark/40 border-y border-foret/5">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- En-tête de section -->
+        <!-- En-tête de section avec son Eyebrow sur fond pastille contrasté -->
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span
-                class="text-xs font-bold text-safran uppercase tracking-widest block mb-2"
+                class="text-xs font-extrabold text-foret bg-safran/30 px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block mb-3 shadow-sm"
             >
                 Savoir-faire Créole
             </span>
             <h2 class="text-3xl md:text-5xl font-serif text-foret mb-4">
                 À la Carte & Sur le Marché
             </h2>
-            <p class="text-foret/70 text-base">
+            <p class="text-foret/80 text-base font-medium">
                 Marmites traditionnelles, spécialités au fumoir et street-food
                 faite maison.
             </p>
@@ -54,7 +54,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         Carrys, Rougails & Sautés Traditionnels
                     </h3>
                     <p
-                        class="text-sable/90 text-sm md:text-base leading-relaxed mb-4 font-light"
+                        class="text-sable/95 text-sm md:text-base leading-relaxed mb-4 font-normal"
                     >
                         Les incontournables de l'île : Carry Poulet, Rougail
                         Saucisse fumé et Sauté de poulet aux légumes. Tous nos
@@ -77,7 +77,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
             <!-- Carte 1 : Sarcives & Fumoir -->
             <a
                 href="/nos-plats/sarcives-fumoir"
-                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/10 flex flex-col"
             >
                 <div class="overflow-hidden h-48 relative">
                     <Image
@@ -89,15 +89,16 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         loading="lazy"
                     />
                     <span
-                        class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                        class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow"
                     >
                         Spécialités Fumoir
                     </span>
                 </div>
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
+                        <!-- Petit badge texte sur fond coloré discret pour valider le contraste des petites cartes -->
                         <span
-                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                            class="text-[10px] font-extrabold text-[#A8381C] bg-terracotta/10 px-2 py-0.5 rounded uppercase tracking-wider inline-block mb-1.5"
                         >
                             Rôti & Mariné
                         </span>
@@ -106,7 +107,9 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         >
                             Sarcives & Grillades
                         </h3>
-                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                        <p
+                            class="text-xs text-foret/80 leading-relaxed mb-4 font-medium"
+                        >
                             Ribs, filet mignon et poulet fermier Label Rouge
                             cuits au fumoir avec notre marinade secrète.
                         </p>
@@ -122,7 +125,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
             <!-- Carte 2 : Snacks & Bouchons Maison -->
             <a
                 href="/nos-plats/samoussas-bouchons"
-                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/10 flex flex-col"
             >
                 <div class="overflow-hidden h-48 relative">
                     <Image
@@ -134,7 +137,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         loading="lazy"
                     />
                     <span
-                        class="absolute top-3 left-3 bg-safran text-foret text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                        class="absolute top-3 left-3 bg-safran text-foret text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow"
                     >
                         100% Fait Maison
                     </span>
@@ -142,7 +145,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
                         <span
-                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                            class="text-[10px] font-extrabold text-[#A8381C] bg-terracotta/10 px-2 py-0.5 rounded uppercase tracking-wider inline-block mb-1.5"
                         >
                             Street-Food Créole
                         </span>
@@ -151,7 +154,9 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         >
                             Bouchons & Snacks Péi
                         </h3>
-                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                        <p
+                            class="text-xs text-foret/80 leading-relaxed mb-4 font-medium"
+                        >
                             Bouchons porc/combava et poulet faits maison,
                             samoussas, accras de morue et bonbons piment.
                         </p>
@@ -167,7 +172,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
             <!-- Carte 3 : Service Traiteur & Événements -->
             <a
                 href="/devis-traiteur"
-                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/5 flex flex-col"
+                class="group bg-sable rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-foret/10 flex flex-col"
             >
                 <div class="overflow-hidden h-48 relative">
                     <Image
@@ -179,7 +184,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         loading="lazy"
                     />
                     <span
-                        class="absolute top-3 left-3 bg-foret text-sable text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                        class="absolute top-3 left-3 bg-foret text-sable text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow"
                     >
                         Sur-Mesure
                     </span>
@@ -187,7 +192,7 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
                         <span
-                            class="text-[10px] font-bold text-terracotta uppercase tracking-wider block mb-1"
+                            class="text-[10px] font-extrabold text-[#A8381C] bg-terracotta/10 px-2 py-0.5 rounded uppercase tracking-wider inline-block mb-1.5"
                         >
                             Événementiel
                         </span>
@@ -196,7 +201,9 @@ import imgMarche from "../assets/images/stand-marche.jpg";
                         >
                             Prestations Traiteur
                         </h3>
-                        <p class="text-xs text-foret/70 leading-relaxed mb-4">
+                        <p
+                            class="text-xs text-foret/80 leading-relaxed mb-4 font-medium"
+                        >
                             Buffets créoles, mariages et repas d'entreprise
                             servis à la marmite partout en Haute-Garonne.
                         </p>
